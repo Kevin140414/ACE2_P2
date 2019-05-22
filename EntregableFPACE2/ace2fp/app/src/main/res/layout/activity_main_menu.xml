@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Seleccione el tipo de ducha:."
+                android:textColor="@color/negro"
+                android:textSize="24sp"
+                app:fontFamily="cursive" />
+
+        </RelativeLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkblue">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioGroup
+                    android:id="@+id/gpRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true">
+
+                        <RadioButton
+                            android:id="@+id/rbtnMan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="5dp"
+                            android:checked="true"
+                            android:text="Manual."
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rbtnAut"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Automatica."
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rbtnSaver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="5dp"
+                            android:checked="true"
+                            android:text="Ahorrador."
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                </RadioGroup>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                    android:id="@+id/btnTakeS"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@mipmap/img_k1" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnTakeS"
+                        android:layout_marginBottom="25dp"
+                        android:text="Configurar."
+                        android:textAlignment="center"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp"
+                        android:textStyle="italic" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saved water."
+                        android:textAlignment="center"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnSavedW"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/textView3"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@mipmap/sav_w" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Friends."
+                        android:textAlignment="center"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnFriend"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/textView4"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@mipmap/friends" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Unknow...."
+                        android:textAlignment="center"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnRep"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/textView5"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@mipmap/rep" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </TableRow>
+</TableLayout>

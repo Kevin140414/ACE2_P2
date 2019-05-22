@@ -1,0 +1,286 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.juandelcid.ace2fp.ManualShower">
+
+    <TextView
+        android:id="@+id/tvInfConex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rojo"
+        android:text="@string/msg_NoConex"
+        android:textAlignment="center"
+        android:textColor="@color/negro"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvInfo"
+        android:layout_below="@+id/tvInfConex">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blanco">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvInfMode"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1_1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco">
+                    <ImageButton
+                        android:id="@+id/btnRock"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:background="@color/blanco"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true"
+                        android:textAllCaps="false"
+                        app:srcCompat="@mipmap/rock" />
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnRock"
+                        android:layout_centerHorizontal="true"
+                        android:text="Rock."
+                        android:textColor="@color/negro"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1_2"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/blanco">
+                    <ImageButton
+                        android:id="@+id/btnClasic"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:background="@color/blanco"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true"
+                        android:textAllCaps="false"
+                        app:srcCompat="@mipmap/clasic" />
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnClasic"
+                        android:layout_centerHorizontal="true"
+                        android:text="Clasica."
+                        android:textColor="@color/negro"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blanco">
+
+                    <ImageButton
+                        android:id="@+id/btnElectric"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/blanco"
+                        android:scaleType="fitXY"
+                        android:textAllCaps="false"
+                        app:srcCompat="@mipmap/electric" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnElectric"
+                        android:layout_centerHorizontal="true"
+                        android:text="Electronica."
+                        android:textColor="@color/negro"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvInfMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elige tu genero:"
+                android:textColor="@color/negro"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_centerVertical="true"
+            android:background="@color/blanco">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/btnStart"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/verde"
+                        android:background="@drawable/reproducir"
+                        android:onClick="PlayPause"/>
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnStart"
+                        android:layout_centerHorizontal="true"
+                        android:text="Iniciar."
+                        android:textColor="@color/negro"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/relativeLayout2">
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/verde"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvInfo6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Tiempo restante:"
+                        android:textColor="@color/grayEnd"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvCountDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvInfo6"
+                        android:layout_centerHorizontal="true"
+                        android:text=" 0:00 "
+                        android:textColor="@color/blanco"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line4"
+                android:background="@color/amarillo"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/acua"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvInfo4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Agua utilizada:"
+                        android:textColor="@color/grayEnd"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvUsedWater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvInfo4"
+                        android:layout_centerHorizontal="true"
+                        android:text="00 L."
+                        android:textColor="@color/blanco"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvDato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Data received..."
+        android:textColor="@color/negro"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/tvDato"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Info about data sent."
+        android:textColor="@color/negro"
+        android:textSize="16sp" />
+
+
+
+</RelativeLayout>

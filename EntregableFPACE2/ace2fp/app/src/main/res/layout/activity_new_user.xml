@@ -1,0 +1,153 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="First name:"
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:hint="user name."
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView1_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtNombre"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1_1"
+        android:text="Second name:"
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="second name."
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView2_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtApellido"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2_1"
+        android:text="Password."
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtClave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtNombre"
+        android:layout_alignRight="@+id/txtNombre"
+        android:layout_below="@+id/textView3"
+        android:ems="10"
+        android:hint="******"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtClave"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3_1"
+        android:text="E-mail."
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtNombre"
+        android:layout_alignRight="@+id/txtNombre"
+        android:layout_below="@+id/textView4"
+        android:ems="10"
+        android:hint="E-mail@.com"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView4_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtCorreo"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView4_1"
+        android:text="Click to continue."
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView24"
+        android:layout_centerHorizontal="true"
+        android:text="I agree."
+        android:textStyle="bold" />
+</RelativeLayout>

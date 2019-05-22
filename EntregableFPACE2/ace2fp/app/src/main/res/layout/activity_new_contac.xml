@@ -1,0 +1,91 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Correo:"
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:hint="e-mail@.com"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView1_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtCorreo"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1_1"
+        android:text="ID user:"
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtIDUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="password xxxx"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView2_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtIDUser"
+        android:background="@color/plata"
+        android:textSize="8sp" />
+
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView2_1"
+        android:text="Click to continue."
+        android:textColor="@color/negro"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView24"
+        android:layout_centerHorizontal="true"
+        android:text="I agree."
+        android:textStyle="bold" />
+</RelativeLayout>
