@@ -24,6 +24,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Locale;
 
 public class SaveShower extends AppCompatActivity {
@@ -189,6 +192,7 @@ public class SaveShower extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                postValores();
                 mTimerRunning = false;
                 //btnStart.setText("Start");
                 textView30.setText( "Start");
@@ -198,6 +202,28 @@ public class SaveShower extends AppCompatActivity {
         mTimerRunning = true;
         textView30.setText("pause");
     }
+
+    private void postValores(){
+        int tiempototal = (int) (START_TIME_IN_MILLIS - mTimeLeftInMillis) / 1000;
+        int tiempoEfectivo = tiempototal - (int)(tiempototal * 0.3);
+        double litros = tiempoEfectivo * 0.05;
+
+        URLConnect2.ruta = "registro";
+
+        URLConnect2.postDataParams = new JSONObject();
+        try {
+            URLConnect2.postDataParams.put("idusuario",  String.valueOf(VentanaPrincipal.id_user));
+            URLConnect2.postDataParams.put("litros",  String.valueOf(litros));
+            URLConnect2.postDataParams.put("tiempoefectivo",  String.valueOf(tiempoEfectivo));
+            URLConnect2.postDataParams.put("tiempototal",  String.valueOf(tiempototal));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new URLConnect2.SendPostRequest().execute();
+    }
+
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
@@ -221,6 +247,7 @@ public class SaveShower extends AppCompatActivity {
     //Método para el botón PlayPause
     public void PlayPause(){
         if(vectormp[posicion].isPlaying()){
+            postValores();
             vectormp[posicion].pause();
             btnStart.setBackgroundResource(R.drawable.reproducir);
             Toast.makeText(this, "Finalizado", Toast.LENGTH_SHORT).show();

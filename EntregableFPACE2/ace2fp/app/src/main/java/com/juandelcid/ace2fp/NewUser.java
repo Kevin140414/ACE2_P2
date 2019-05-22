@@ -81,7 +81,6 @@ public class NewUser extends AppCompatActivity {
             ServicioNewUser servicioTask= new ServicioNewUser(this,"https://apex.oracle.com/pls/apex/ace2g3/duchapp/signin",apellido,clave, nombre, correo);
             servicioTask.execute();
 
-            Toast.makeText(getBaseContext(), "Successful process.", Toast.LENGTH_SHORT).show();
             onBackPressed();
             limpiarCampos();
         }

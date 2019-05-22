@@ -22,6 +22,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListContact"></activity>
         <activity
             android:name=".VentanaPrincipal"
             android:label="@string/app_name">
@@ -57,7 +58,7 @@
             android:label="@string/app_name" />
         <activity android:name=".ManualShower" />
         <activity android:name=".AutomaticShower" />
-        <activity android:name=".NewContac"></activity>
+        <activity android:name=".NewContac" />
     </application>
 
 </manifest>

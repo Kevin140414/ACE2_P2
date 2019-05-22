@@ -18,9 +18,8 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class URLConnect {
+public class URLConnect2 {
 
-    public static String metodo = "GET";
     public static String conexion = "https://apex.oracle.com/pls/apex/ace2g3/duchapp/";
     public static String data = "";
     public static String ruta = "";
@@ -30,38 +29,54 @@ public class URLConnect {
 
         protected String doInBackground(String... arg0) {
 
-            String wsURL = conexion + ruta;
-            URL url = null;
             try {
-                // se crea la conexion al api: http://localhost:15009/WEBAPIREST/api/persona
-                url = new URL(wsURL);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                URL url = new URL(conexion + ruta);
 
-                try {
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                    StringBuilder stringBuilder = new StringBuilder();
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        stringBuilder.append(line).append("\n");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(getPostDataString(postDataParams));
+
+                writer.flush();
+                writer.close();
+                os.close();
+
+                int responseCode=conn.getResponseCode();
+
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
+
+                    BufferedReader in=new BufferedReader(new
+                            InputStreamReader(
+                            conn.getInputStream()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while((line = in.readLine()) != null) {
+
+                        sb.append(line);
+                        break;
                     }
-                    bufferedReader.close();
 
-                    data = stringBuilder.toString();
-                    return stringBuilder.toString();
-                }
-                finally{
-                    urlConnection.disconnect();
-                }
+                    in.close();
+                    data = sb.toString().replace("'", "\"");
+                    return sb.toString().replace("'", "\"");
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
+                }
+                else {
+                    return new String("false : "+responseCode);
+                }
             }
-
-            return  data;
+            catch(Exception e){
+                return new String("Exception: " + e.getMessage());
+            }
         }
 
         @Override

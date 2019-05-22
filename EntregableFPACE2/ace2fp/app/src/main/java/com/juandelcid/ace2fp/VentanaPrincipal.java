@@ -8,9 +8,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class VentanaPrincipal extends AppCompatActivity {
+    public static int id_user = 0;
+
+
     Button btnIngresar;
     Button btnAcerca;
     Button btnNewUser;
@@ -49,9 +56,30 @@ public class VentanaPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /**  **/
-                Intent mainW = new Intent(VentanaPrincipal.this, MainMenu.class);
-                startActivity(mainW);
-                limpiarCampos();
+                //URLConnect.metodo = "GET";
+                URLConnect.postDataParams = new JSONObject();
+                URLConnect.ruta = "login/" + txtUser.getText().toString() + "/" + txtPass.getText().toString();
+                new URLConnect.SendPostRequest().execute();
+
+                try {
+                    JSONObject jsonObj = new JSONObject(URLConnect.data);
+                    jsonObj = jsonObj.getJSONArray("items").getJSONObject(0);
+
+                    if(jsonObj.length() > 0){
+                        id_user = jsonObj.getInt("idusuario");
+                    }
+
+                    if(id_user != 0){
+                        Intent mainW = new Intent(VentanaPrincipal.this, MainMenu.class);
+                        startActivity(mainW);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "El correo que ingreso no se encuentra registrado en la plataforma.",
+                                Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
         btnNewUser = (Button) findViewById(R.id.btnNewUser);

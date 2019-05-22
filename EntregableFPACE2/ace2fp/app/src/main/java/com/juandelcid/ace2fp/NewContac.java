@@ -64,10 +64,9 @@ public class NewContac extends AppCompatActivity {
             String idusuario = txtIDUser.getText().toString();
 
             //ServicioTask servicioTask= new ServicioTask(this,"http://192.168.0.10:15009/WEBAPIREST/api/persona",apellido,clave, nombre, correo);
-            ServicioNewContact servicioTask= new ServicioNewContact(this,"https://apex.oracle.com/pls/apex/ace2g3/open-api-catalog/duchapp/contacto/",correo,idusuario);
+            ServicioNewContact servicioTask= new ServicioNewContact(this,"https://apex.oracle.com/pls/apex/ace2g3/duchapp/contacto",correo, String.valueOf(VentanaPrincipal.id_user));
             servicioTask.execute();
 
-            Toast.makeText(getBaseContext(), "Successful process.", Toast.LENGTH_SHORT).show();
             onBackPressed();
             limpiarCampos();
         }

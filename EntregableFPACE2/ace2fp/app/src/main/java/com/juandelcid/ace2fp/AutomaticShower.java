@@ -26,6 +26,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Locale;
 
 public class AutomaticShower extends AppCompatActivity {
@@ -185,13 +188,10 @@ public class AutomaticShower extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                postValores();
                 mTimerRunning = false;
                 //btnStart.setText("Start");
                 textView30.setText( "Start");
-
-
-                //codigo de realizar post
-
             }
         }.start();
 
@@ -206,8 +206,30 @@ public class AutomaticShower extends AppCompatActivity {
     }
 
     private void resetTimer() {
+        postValores();
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
         updateCountDownText();
+    }
+
+    private void postValores(){
+        int tiempoEfectivo = (int) (START_TIME_IN_MILLIS - mTimeLeftInMillis) / 1000;
+        int tiempototal = tiempoEfectivo;
+        double litros = tiempototal * 0.05;
+
+        URLConnect2.ruta = "registro";
+
+        URLConnect2.postDataParams = new JSONObject();
+        try {
+            URLConnect2.postDataParams.put("idusuario",  String.valueOf(VentanaPrincipal.id_user));
+            URLConnect2.postDataParams.put("litros",  String.valueOf(litros));
+            URLConnect2.postDataParams.put("tiempoefectivo",  String.valueOf(tiempoEfectivo));
+            URLConnect2.postDataParams.put("tiempototal",  String.valueOf(tiempototal));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new URLConnect2.SendPostRequest().execute();
     }
 
     private void updateCountDownText() {
@@ -221,6 +243,7 @@ public class AutomaticShower extends AppCompatActivity {
     //Método para el botón PlayPause
     public void PlayPause(){
         if(vectormp[posicion].isPlaying()){
+            postValores();
             vectormp[posicion].pause();
             btnStart.setBackgroundResource(R.drawable.reproducir);
             Toast.makeText(this, "Finalizado", Toast.LENGTH_SHORT).show();

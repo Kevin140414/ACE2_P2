@@ -62,7 +62,7 @@ public class ServicioNewUser extends AsyncTask<Void, Void, String> {
             //crear el objeto json para enviar por POST
             JSONObject parametrosPost= new JSONObject();
             parametrosPost.put("apellido",apellido);
-            parametrosPost.put("clave","data");
+            parametrosPost.put("clave",clave);
             parametrosPost.put("correo",nombre);
             parametrosPost.put("nombre",correo);
 

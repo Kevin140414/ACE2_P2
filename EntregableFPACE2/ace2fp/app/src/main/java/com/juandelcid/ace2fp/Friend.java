@@ -23,7 +23,8 @@ public class Friend extends AppCompatActivity {
         btnLstContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent newInt = new Intent(Friend.this, ListContact.class);
+                startActivity( newInt );
             }
         });
         btnNewContact = (ImageButton)findViewById(R.id.btnNewContact);
